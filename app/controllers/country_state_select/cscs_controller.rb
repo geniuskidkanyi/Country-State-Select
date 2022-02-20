@@ -3,6 +3,7 @@
 # @author : Arvind Vyas
 module CountryStateSelect
   class CscsController < ApplicationController
+    protect_from_forgery with: :null_session
     def find_states
       csc = CS.states(params[:country_id])
 
