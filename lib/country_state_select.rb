@@ -7,7 +7,7 @@ require 'rails'
 module CountryStateSelect
   # Collect the Countries
   def self.countries_collection
-    CS.countries.except!(:COUNTRY_ISO_CODE).collect { |p| [p[1], p[0]] }.compact
+    CS.countries.except!(:COUNTRY_ISO_CODE).collect { |p| [p[1], p[0]] }.sort_by { |f| [f[0]]   }.compact
   end
 
   # Pass array of unwanted countries to get back all except those in the array
